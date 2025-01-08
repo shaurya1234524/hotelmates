@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Search Results{% endblock title %}
+{% block body %}
+{% if allPosts|length < 1 %}
+<p class="h3">Your search  did not match any documents.</p><br>
+
+Suggestions:
+<li>
+<ul>Make sure that all words are spelled correctly.</ul>
+<ul>Try different keywords.</ul>
+<ul>Try more general keywords.</ul>
+</li>
+{%endif%} 
+{% for REGISTER in allPosts%}
+
+<div class="roomcard">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 my-3 my-2">
+      <div class="card border-0 shadow " style="max-width: 350px margin:auto;">
+        {% load static %}
+        <img class="mx-3 rounded"src="{% static 'C:\Users\AVITA\Desktop\Hotelmates\hotelmate\static\rafi-thissen-dYyBb1Kgcms-unsplash.jpg' %}" alt="My image" height="50%" >
+        
+        <div class="card-body">
+          <p class="card-text "><strong>Hotelname:</strong> {{REGISTER.Hotel}} , {{REGISTER.city}}, {{REGISTER.country}}</p>
+          <p class="card-text "><strong>Username : {{REGISTER.username}}</strong></p>
+          <p class="card-text"><strong>Checkin date:</strong> {{REGISTER.checkindate}}</p>
+          <p class="card-text"><strong>Checkout date:</strong> {{REGISTER.checkoutdate}}</p>
+          <p class="card-text"><strong >Budget Price:</strong><p class="text-success">{{REGISTER.budget}} </p></p>
+          <p class="card-text "><strong>Description:</strong> {{REGISTER.messsage}}</p>
+          <p class="card-text"><strong>Number of people Required : </strong>{{REGISTER.num}}</p>
+            <p class="h5">Contact :</p><a href ="tel:{{REGISTER.phone}}" class="d-inline-block mb-2 text-decoration-none text-dar">
+             <button class="btn bg-success text-white"> <i class="fa-solid fa-phone text-white"></i> Call Now </button>
+            </a>
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+ {% endfor%} 
+{% endblock body%}
