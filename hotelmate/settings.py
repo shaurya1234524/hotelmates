@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uk+#ih7oqofol=cc7$a&p!c3lm+93=^d)38yl8ji-6h%@^(lb^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [' https://shaurya1234524.github.io/hotelmates/']
 
 
 # Application definition
