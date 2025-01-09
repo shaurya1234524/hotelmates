@@ -6,12 +6,12 @@ from django.contrib.auth import authenticate,login,logout
 from home.models import Contactus
 
 # Create your views here.
-def index(request):
+def indexx(request):
     context={
         "variable":"shaurya"
     }
 
-    return render(request,'index.html',context)
+    return render(request,'indexx.html',context)
 
 def about(request):
       return render(request,'about.html')
@@ -63,7 +63,7 @@ def search(request):
       querypeople=request.GET['num']
       querybudgetss=request.GET['budgetss']
       if querycity=='' :
-           return render(request,'index.html')
+           return render(request,'indexx.html')
       
       else:
        allPosts=REGISTER.objects.filter(city__icontains=querycity,checkindate__icontains=querycheckin,checkoutdate__icontains=querycheckout,num__gte=querypeople,budget__gte=querybudgetss,budget__lte=querybudget)

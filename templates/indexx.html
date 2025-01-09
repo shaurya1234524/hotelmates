@@ -1,0 +1,183 @@
+{% extends "index.html" %}
+{% block style %}
+
+{% endblock style %}
+{% block title %}{% endblock title %}Find your Hotel room partners online-Hotelmates
+{% block body %}
+<!--top search bar-->
+<h3 class="text-center">Click above to publish your stay</h3>
+<div class="containerform">
+  <div class="row"> 
+    <div class="col-lg-12 bg-white shadow p-4 rounded">
+    <form method="get" action="/search" >
+      <div class="row " >
+            <div class="col-lg-2">
+              <label class="form-level" for="place">City:</label>
+              <i class="fa-solid fa-city"></i>
+              <input type="text" name="city" id="place" class="form-control" >
+            </div>
+            <div class="col-lg-2">
+              <label class="form-level" for="checkin">Checkin:</label>
+              <i class="fa-solid fa-calendar-days"></i>
+            <input type="date" name="checkindate" id="checkin" class="form-control" >
+            </div>
+            <div class="col-lg-2">
+              <label class="form-level" for="checkout">Checkout:</label>
+              <i class="fa-solid fa-calendar-days"></i>
+              <input type="date" name="checkoutdate" id="checkout" class="form-control" >
+              </div>
+              <div class="col-lg-2">
+                <label class="form-level" for="budgets">budget (Max):</label>
+                <i class="fa-solid fa-rupee-sign"></i>
+                <input type="number" name="budgets" id="budgets" class="form-control" placeholder="Rs" >
+                </div>
+                <div class="col-lg-2">
+                  <label class="form-level" for="budgetss">budget (Min):</label>
+                  <i class="fa-solid fa-rupee-sign"></i>
+                  <input type="number" name="budgetss" id="budgetss" class="form-control" placeholder="Rs" >
+                  </div>
+              <div class="col-lg-1">
+                <label class="form-level" for="selection">People</label>
+                <i class="fa-solid fa-person"></i>
+                <select id="selection" name="num" class="form-select" aria-label="Default select example">
+                  <option selected></option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                </div>
+            <div class="col-lg-1">
+            <button class="bg-success  btn  my-4 text-white">Search</button>
+            </div>
+        </div>
+      </div>
+        </div>
+      </div>
+        
+      </form>
+      <div id="map"></div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active  "  >
+      {% load static %}
+<img src="{% static 'C:\Users\AVITA\Desktop\Hotelmates\hotelmate\static\lance-asper-eJx43ng-fTU-unsplash.jpg' %}" alt="My image" height="50%" width="100%">
+
+</div>
+{% comment %} <div class="carousel-item">
+  
+  {% load static %}
+<img src="{% static 'C:\Users\AVITA\Desktop\Hotelmates\hotelmate\static\s-o-c-i-a-l-c-u-t-96A9UTFAMUM-unsplash.jpg' %}" alt="My image" height="50%" width="100%">
+
+</div>
+<div class="carousel-item">
+ 
+  
+  {% load static %}
+<img src="{% static 'C:\Users\AVITA\Desktop\Hotelmates\hotelmate\static\david-becker-F7SBonu15d8-unsplash.jpg' %}" alt="My image" height="50%" width="100%">
+
+</div> {% endcomment %}
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+</div>
+<h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font" style="font-family:cursive;">REACH US </h2>
+<div class="container3">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
+      <iframe class=" w-100 rounded"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225580.68785425072!2d78.07631893085939!3d27.941894494666403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a48686459c8b%3A0x95d967276d323613!2sAligarh%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1735576661240!5m2!1sen!2sin" height="450" loading="lazy" ></iframe>
+    </div>
+    <div class="col-lg-4 col-md-4 my-3">
+     <div class="bg-white p-4 rounded mb-4">
+      <div class="bg-white">
+      <h5> Call us</h5>
+      <a href="tel:+919761150207" class="d-inline-block mb-2 text-decoration-none  text-dark">
+        <i class="fa-solid fa-phone"></i>+918218647730
+      </a>
+    </div>
+    <div class="bg-white p-4 rounded mb-4">
+      <div class="bg-white">
+      <h5> Follow us</h5>
+      <a href="#" class="d-inline-block mb-3  ">
+        <span class="badge bg-light text-dark fs-6 p-2 ">
+          <i class="fa-brands fa-twitter"></i>
+        </span>
+      </a>
+        <a href="#" class="d-inline-block mb-3  ">
+          <span class="badge bg-light text-dark fs-6 p-2 ">
+            <i class="fa-brands fa-facebook"></i>
+          </span>
+        </a>
+          <a href="#" class="d-inline-block mb-3  ">
+            <span class="badge bg-light text-dark fs-6 p-2 ">
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+
+      </a>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid bg-white mt-5">
+<div class="row">
+  <div class="col-lg-4 p-4">
+    <h3 class="h-font fw-bold fs-3 mb-2">Hotelmates</h3>
+    <p class="text-secondary text-center h5">We provide you an platform where you can find your hotel room partners and save money.</p>
+    <p class="text-secondary text-center h5">We aree 100% secure because we get all neccessary details from user before registration.</p>
+    <p class="text-secondary text-center h5">We saves your money by helping you to find hotel room partner.</p> 
+  </div>
+  <div class="col-lg-4 p-4">
+    <h5 class="mb-3">Links</h5>
+    <a href="" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a><br>
+    <a href="/about" class="d-inline-block mb-2 text-dark text-decoration-none">Contact Us</a><br>
+    <a href="/services" class="d-inline-block mb-2 text-dark text-decoration-none"> Add your stay</a><br>
+
+    </div>
+  <div class="col-lg-4 p-4">
+    <h3>Follow us<h3>
+    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark  ">
+
+        <i class="fa-brands fa-twitter "></i>
+    
+    </a>
+    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark">
+ 
+      <i class="fa-brands fa-facebook"></i>
+  
+    </a>
+    <a href="#" class="d-inline-block mb-3 text-decoration-none text-dark ">
+      <i class="fa-brands fa-instagram"></i>
+      
+    </a>
+
+  </div>
+</div>
+</div>
+<h6 class="p-2 bg-dark text-white  text-center">DESIGNED AND DEVELOPED BY HOTELMATES</h6>
+
+{% comment %} <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?
+  key=AIzaSyCcWg4xb1T2AKiIan3OfsU5YMrED0AQoI&libraries=places" async></script>
+   
+  <script>
+     function initialize(){
+      var input=document.getElementById('place');
+      var autocomplete=new google.maps.places.Autocomplete(input);
+        google.maps.event.addListner(autocomplete,'place_changed',function () {
+        var place=autocomplete.getPlace();
+        document.getElementById('place').value=place.name;
+
+        });
+    }
+          window.addEventListener('load',initialize);
+  </script>
+     {% endcomment %}
+{% endblock body %}
